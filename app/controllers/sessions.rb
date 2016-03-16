@@ -23,7 +23,7 @@ post '/sessions' do
 end
 
 # Logout
-get '/logout' do
-  session.delete(:id)
-  redirect '/'
+delete '/sessions/:id' do
+  session[:id] = nil
+  redirect '/sessions/new'
 end
